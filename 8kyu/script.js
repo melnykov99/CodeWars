@@ -162,16 +162,273 @@ while (i < number + 1) {
 Find the smallest integer in the array
 Given an array of integers your solution should find the smallest integer.
 */
+class SmallestIntegerFinder {
+  findSmallestInt(args) {
+    let currentMin = args[0];
+    for (let i = 0; i <= args.length; i++) {
+      if (args[i] < currentMin) currentMin = args[i];
+    }
+    return currentMin;
+  }
+}
+// Решено
 
-// let myArray = [4, -12, 85, 200, -100, 94]
-// let myResult = myArray[0];
-// function myFunction(paramArray) {
-//   for (let i = 0; i < paramArray.length; i++) {
-//     if (paramArray[i] < myResult) {
-//       myResult = paramArray[i];
-//     }
-//   }
-//   return myResult;
-// }
+/* 
+Counting sheep...
+Consider an array/list of sheep where some sheep may be missing from their place. We need a function that counts the number of sheep present in the array (true means present).
+*/
+function countSheeps(arrayOfSheep) {
+  let counter = 0;
+  for (let i = 0; i < arrayOfSheep.length; i++) {
+    if (arrayOfSheep[i]) {
+      counter++
+    }
+  }
+  return counter;
+}
+// Решено
 
-// console.log(myFunction(myArray));
+/* 
+Is n divisible by x and y?
+Create a function that checks if a number n is divisible by two numbers x AND y. All inputs are positive, non-zero numbers.
+*/
+function isDivisible(n, x, y) {
+  if (n % x == 0 && n % y == 0) {
+    return true;
+  } else {
+    return false;
+  }
+}
+// Решено
+
+/* 
+Keep Hydrated!
+Nathan loves cycling.
+Because Nathan knows it is important to stay hydrated, he drinks 0.5 litres of water per hour of cycling.
+You get given the time in hours and you need to return the number of litres Nathan will drink, rounded to the smallest value.
+*/
+function litres(time) {
+  return Math.floor(time / 2);
+}
+// Решено
+
+/* 
+Basic Mathematical Operations
+Your task is to create a function that does four basic mathematical operations.
+The function should take three arguments - operation(string/char), value1(number), value2(number).
+The function should return result of numbers after applying the chosen operation.
+*/
+function basicOp(operation, value1, value2) {
+  if (operation == "+") {
+    return value1 + value2;
+  } else if(operation == "-") {
+    return value1 - value2;
+  } else if(operation == "*") {
+    return value1 * value2;
+  } else {
+    return value1 / value2;
+  }
+}
+// Решено. Лучше через Switch case записать
+
+/* 
+Convert number to reversed array of digits
+Given a random non-negative number, you have to return the digits of this number within an array in reverse order.
+*/
+function digitize(n) {
+  let numToArr = Array.from(String(n), Number);
+  return numToArr.reverse();
+}
+// Решено. Метод Array.from создет массив из других типов дааных. Сначала преобразовали в строку и затем каждый элемент сделали числом.
+
+/* 
+Convert a String to a Number!
+We need a function that can transform a string into a number. What ways of achieving this do you know?
+*/
+const stringToNumber = function (str) {
+  return Number(str);
+};
+// решено
+
+/* 
+A Needle in the Haystack
+Can you find the needle in the haystack?
+Write a function findNeedle() that takes an array full of junk but containing one "needle"
+After your function finds the needle it should return a message (as a string) that says:
+"found the needle at position " plus the index it found the needle, so:
+*/
+function findNeedle(haystack) {
+  let result = haystack.indexOf("needle");
+  return "found the needle at position " + result;
+}
+// Решено
+
+/* 
+Beginner - Lost Without a Map
+Given an array of integers, return a new array with each value doubled.
+*/
+function maps(x) {
+  let arr = [];
+  for (let i = 0; i < x.length; i++) {
+    arr[i] = x[i] * 2;
+  }
+  return arr;
+}
+// Решено
+
+/* 
+Returning Strings
+Make a function that will return a greeting statement that uses an input; your program should return, "Hello, <name> how are you doing today?".
+[Make sure you type the exact thing I wrote or the program may not execute properly]
+*/
+function greet(name) {
+  return "Hello, " + name + " how are you doing today?";
+}
+// Решено. Чище можно выполнить с конкатенацией function greet(name){return `Hello, ${name} how are you doing today?`;}
+
+/* 
+Function 1 - hello worldMake a simple function called greet that returns the most-famous "hello world!".
+Style Points
+Sure, this is about as easy as it gets. But how clever can you be to create the most creative hello world you can think of? What is a "hello world" solution you would want to show your friends?
+*/
+function greet() {
+  return "hello world!"
+}
+// Решено
+
+/* 
+Beginner Series #2 Clock
+Clock shows h hours, m minutes and s seconds after midnight.
+Your task is to write a function which returns the time since midnight in milliseconds.
+*/
+function past(h, m, s) {
+  let hours = h * 3600000;
+  let minuts = m * 60000;
+  let seconds = s * 1000;
+  let result = hours + minuts + seconds;
+  return result;
+}
+//Решено
+
+/* 
+Convert a Boolean to a String
+Implement a function which convert the given boolean value into its string representation.
+Note: Only valid inputs will be given.
+*/
+function booleanToString(b) {
+  return String(b);
+}
+// решено
+
+/* 
+Opposites Attract
+Timmy & Sarah think they are in love, but around where they live, they will only know once they pick a flower each. If one of the flowers has an even number of petals and the other has an odd number of petals it means they are in love.
+Write a function that will take the number of petals of each flower and return true if they are in love and false if they aren't.
+*/
+function lovefunc(flower1, flower2) {
+  if(flower1 % 2 == 0 && flower2 % 2 != 0) {
+    return true;
+  } else if (flower1 % 2 != 0 && flower2 % 2 == 0) {
+    return true;
+  } else {
+    return false;
+  }
+}
+// Решено. Чище так function lovefunc(flower1, flower2){return flower1 % 2 !== flower2 % 2;}
+
+/* 
+Invert values
+Given a set of numbers, return the additive inverse of each. Each positive becomes negatives, and the negatives become positives.
+*/
+function invert(array) {
+  let newArray = [];
+  for (let i = 0; i < array.length; i++) {
+    newArray.push(array[i] * -1);
+  }
+  return newArray;
+}
+// Решено
+
+/* 
+Beginner Series #1 School Paperwork
+Your classmates asked you to copy some paperwork for them. You know that there are 'n' classmates and the paperwork has 'm' pages.
+Your task is to calculate how many blank pages do you need. If n < 0 or m < 0 return 0.
+*/
+function paperwork(n, m) {
+  if (n > 0 && m > 0) {
+    return n * m;
+  } else {
+    return 0;
+  }
+}
+// Решено
+
+/* 
+Fake Binary
+Given a string of digits, you should replace any digit below 5 with '0' and any digit 5 and above with '1'. Return the resulting string.
+*/
+function fakeBin(x) {
+  let newStr = "";
+  for (let i = 0; i < x.length; i++) {
+    if (x[i] < 5) {
+      newStr += "0";
+    } else {
+      newStr += "1";
+    }
+  }
+  return newStr;
+}
+// Решено
+
+/* 
+You only need one - Beginner
+You will be given an array a and a value x. All you need to do is check whether the provided array contains the value.
+Array can contain numbers or strings. X can be either.
+Return true if the array contains the value, false if not.
+*/
+function check(a, x) {
+  for (let i = 0; i < a.length; i++) {
+    if (a.indexOf(x) != -1) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+}
+// Решено. Можно было решить через метод includes
+
+/* 
+Are You Playing Banjo?
+Create a function which answers the question "Are you playing banjo?".
+If your name starts with the letter "R" or lower case "r", you are playing banjo!
+The function takes a name as its only argument, and returns one of the following strings:
+*/
+function areYouPlayingBanjo(name) {
+  if (name[0] == "r" || name[0] == "R") {
+    return name + " plays banjo";
+  } else {
+    return name + " does not play banjo";
+  }
+}
+// решено
+
+/* 
+Calculate BMI
+Write function bmi that calculates body mass index (bmi = weight / height2).
+if bmi <= 18.5 return "Underweight"
+if bmi <= 25.0 return "Normal"
+if bmi <= 30.0 return "Overweight"
+if bmi > 30 return "Obese"
+*/
+function bmi(weight, height) {
+  if (weight / Math.pow(height, 2) <= 18.5) {
+    return "Underweight";
+  } else if (weight / Math.pow(height, 2) <= 25.0) {
+    return "Normal";
+  } else if (weight / Math.pow(height, 2) <= 30.0) {
+    return "Overweight";
+} else {
+  return "Obese";
+}
+}
+// Решено. Лучше через switch case

@@ -550,3 +550,123 @@ const reverseSeq = (n) => {
   return result
 };
 // Решено
+
+/*
+Reversed Words
+Complete the solution so that it reverses all of the words within the string passed in.
+*/
+function reverseWords(str) {
+  return str.split(" ").reverse().join(" ");
+}
+// Решено
+/*
+Sum Arrays
+Write a function that takes an array of numbers and returns the sum of the numbers. The numbers can be negative or non-integer. If the array does not contain any numbers then you should return 0.
+*/
+function sum (numbers) {
+  let sum = 0;
+    if(numbers.length == 0) {
+      return 0
+    } else {
+      for (let i = 0; i < numbers.length; i++)
+        sum += numbers[i]
+    } return sum;
+};
+// решено. Можно через numbers.reduce
+
+/*
+Beginner - Reduce but Grow
+Given a non-empty array of integers, return the result of multiplying the values together in order. Example: [1, 2, 3, 4] => 1 * 2 * 3 * 4 = 24
+*/
+const grow = (x) => x.reduce((a, b) => a * b);
+// решено
+
+/*
+Jenny's secret message
+Jenny has written a function that returns a greeting for a user. However, she's in love with Johnny, and would like to greet him slightly different. She added a special case to her function, but she made a mistake.
+*/
+function greet(name) {
+  if (name === "Johnny") {
+    return "Hello, my love!";
+  } else {
+    return "Hello, " + name + "!";
+  }
+}
+// решено. return был сначала и функция завершалась, не было проверки на name === "Jonny";
+
+/*
+Is he gonna survive?
+A hero is on his way to the castle to complete his mission. However, he's been told that the castle is surrounded with a couple of powerful dragons! each dragon takes 2 bullets to be defeated, our hero has no idea how many bullets he should carry.. Assuming he's gonna grab a specific given number of bullets and move forward to fight another specific given number of dragons, will he survive?
+ */
+function hero(bullets, dragons) {
+  if (bullets < dragons * 2) {
+    return false;
+  } else {
+    return true;
+  }
+}
+// решено
+
+/*
+Simple multiplication
+This kata is about multiplying a given number by eight if it is an even number and by nine otherwise.
+*/
+function simpleMultiplication(number) {
+  return number % 2 === 0 ? number * 8 : number * 9;
+}
+// решено
+
+/*
+MakeUpperCase
+Write a function which converts the input string to uppercase.
+*/
+function makeUpperCase(str) {
+  return str.toUpperCase();
+}
+// решено
+
+/*
+Will you make it?
+You were camping with your friends far away from home, but when it's time to go back, you realize that your fuel is running out and the nearest pump is 50 miles away! You know that on average, your car runs on about 25 miles per gallon. There are 2 gallons left.
+Considering these factors, write a function that tells you if it is possible to get to the pump or not.
+Function should return true if it is possible and false if not.
+*/
+const zeroFuel = (distanceToPump, mpg, fuelLeft) => {
+  return distanceToPump <= mpg * fuelLeft ? true : false;
+};
+//Решено
+
+/*
+DNA to RNA Conversion
+Deoxyribonucleic acid, DNA is the primary information storage molecule in biological systems. It is composed of four nucleic acid bases Guanine ('G'), Cytosine ('C'), Adenine ('A'), and Thymine ('T').
+Ribonucleic acid, RNA, is the primary messenger molecule in cells. RNA differs slightly from DNA its chemical structure and contains no Thymine. In RNA Thymine is replaced by another nucleic acid Uracil ('U').
+Create a function which translates a given DNA string into RNA.
+*/
+function DNAtoRNA(dna) {
+  let arr = dna.split("");
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] == "T") {
+      arr.splice(i, 1, "U");
+    }
+  }
+  return arr.join("");
+}
+//
+
+/*
+Array plus array
+I'm new to coding and now I want to get the sum of two arrays... Actually the sum of all their elements. I'll appreciate for your help.
+P.S. Each array includes only integer numbers. Output is a number too.
+*/
+function arrayPlusArray(arr1, arr2) {
+  let sum1 = 0;
+  let sum2 = 0;
+  for (let i = 0; i < arr1.length; i++) {
+    sum1 += arr1[i];
+  }
+  for (let i = 0; i < arr2.length; i++) {
+    sum2 += arr2[i];
+  }
+  return sum1 + sum2;
+}
+// решено. Можно было через .concat и .reduce

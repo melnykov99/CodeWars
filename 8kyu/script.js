@@ -432,3 +432,121 @@ function bmi(weight, height) {
 }
 }
 // Решено. Лучше через switch case
+
+/*
+Century From Year
+The first century spans from the year 1 up to and including the year 100, the second century - from the year 101 up to and including the year 200, etc.
+Given a year, return the century it is in.
+*/
+function century(year) {
+  let check = year / 100; // переменная для проверки
+  if (Number.isInteger(check) == true) { //проверка целое число или нет
+    return Math.floor(year / 100); // если число целое 
+  } else {
+    return Math.floor(year / 100 + 1); // если число с остатком
+  }
+}
+// решено // Альтернативное решение const century = year => Math.ceil(year/100)
+
+/*
+Abbreviate a Two Word Name
+Write a function to convert a name into initials. This kata strictly takes two words with one space in between them.
+The output should be two capital letters with a dot separating them.
+*/
+function abbrevName(name) {
+  let arr = name.split(""); // разбиваем каждый символ строки на элементы массива
+  let result = arr[0] + "."; // результатом всегда будет первый элемент массива (строки) и точка
+    for (let i = 0; i < arr.length; i++) { //перебор массива
+      if (arr[i] == " ") { // как только находим пробел
+        result += arr[i + 1]; // добавляем к результату следующий символ
+      }
+    }
+  return result.toUpperCase(); // возвращаем результат большими буквами
+}
+// решено // Альтернативное решение:
+/*
+function abbrevName(name){
+  var nameArray = name.split(" ");
+  return (nameArray[0][0] + "." + nameArray[1][0]).toUpperCase();
+}
+*/
+
+/*
+Count of positives / sum of negatives
+Given an array of integers.
+Return an array, where the first element is the count of positives numbers and the second element is sum of negative numbers. 0 is neither positive nor negative.
+If the input is an empty array or is null, return an empty array.
+*/
+function countPositivesSumNegatives(input) {
+  let positiveNums = 0;
+  let negativeNums = 0;
+  if (input === null || input.length === 0) {
+    return [];
+  } else {
+    for (let i = 0; i < input.length; i++) {
+      if (input[i] > 0) {
+        positiveNums += 1;
+      } else {
+        negativeNums += input[i];
+      }
+    }
+  }
+  return [positiveNums, negativeNums];
+}
+
+// Решено
+
+/*
+Calculate average
+Write a function which calculates the average of the numbers in a given list.
+Note: Empty arrays should return 0.
+*/
+function findAverage(array) {
+  let amount = 0;
+  let sum = 0;
+  if (array.length == 0) {
+    return 0;
+  } else {
+    for (let i = 0; i < array.length; i++) {
+      amount += 1;
+      sum += array[i];
+    }
+  }
+  return sum / amount;
+}
+// решено
+
+/*
+How good are you really?
+There was a test in your class and you passed it. Congratulations!
+But you're an ambitious person. You want to know if you're better than the average student in your class.
+You receive an array with your peers' test scores. Now calculate the average and compare your score!
+Return True if you're better, else False!
+*/
+function betterThanAverage(classPoints, yourPoints) {
+  let sum = 0
+  for (let i = 0; i < classPoints.length; i++) {
+    sum += classPoints[i];
+  }
+  if (yourPoints < sum / classPoints.length) {
+    return false;
+  } else {
+    return true;
+  }
+}
+// Решено
+
+/*
+Reversed sequence
+Build a function that returns an array of integers from n to 1 where n>0.
+Example : n=5 --> [5,4,3,2,1]
+*/
+const reverseSeq = (n) => {
+  let result = [];
+  while (n > 0) {
+    result.push(n);
+    n--;
+  }
+  return result
+};
+// Решено

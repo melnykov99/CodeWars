@@ -670,3 +670,78 @@ function arrayPlusArray(arr1, arr2) {
   return sum1 + sum2;
 }
 // решено. Можно было через .concat и .reduce
+
+/*
+Get the mean of an array
+It's the academic year's end, fateful moment of your school report. The averages must be calculated. All the students come to you and entreat you to calculate their average for them. Easy ! You just need to write a script.
+Return the average of the given array rounded down to its nearest integer.
+The array will never be empty.
+*/
+function getAverage(marks) {
+  let sum = 0;
+  for (let i = 0; i < marks.length; i++) {
+    sum += marks[i];
+  }
+  return Math.floor(sum / marks.length);
+} 
+// Решено
+
+/*
+Find Maximum and Minimum Values of a List
+Your task is to make two functions ( max and min, or maximum and minimum, etc., depending on the language ) that receive a list of integers as input, and return the largest and lowest number in that list, respectively.
+*/
+var min = function (list) {
+  let minInt = list[0];
+  for (let i = 1; i < list.length; i++) {
+    if (minInt > list[i]) {
+      minInt = list[i];
+    }
+  }
+  return minInt;
+};
+
+var max = function (list) {
+  let maxInt = list[0];
+  for (let i = 1; i < list.length; i++) {
+    if (maxInt < list[i]) {
+      maxInt = list[i];
+    }
+  }
+  return maxInt;
+};
+// Решено. // Можно было через Math.min и Math.max
+
+/*
+Sentence Smash
+Write a function that takes an array of words and smashes them together into a sentence and returns the sentence. You can ignore any need to sanitize words or add punctuation, but you should add spaces between each word. Be careful, there shouldn't be a space at the beginning or the end of the sentence!
+*/
+function smash (words) {
+   return words.join(' ')
+};
+// Решено
+
+/*
+Sum without highest and lowest number
+Sum all the numbers of a given array ( cq. list ), except the highest and the lowest element ( by value, not by index! ).
+The highest or lowest element respectively is a single element at each edge, even if there are more than one with the same value.
+Mind the input validation.
+*/
+function sumArray(array) {
+  let maxInt = array[0];
+  let minInt = array[0];
+  let sum = 0;
+    if (array.length === 0 || array === null || array === 0 || array === []) {
+      return 0
+    } else {
+      for (let i = 0; i < array.length; i++) {
+        if (maxInt < array[i]) {
+          maxInt = array[i];
+          sum += array[i];
+        } else if (minInt > array[i]) {
+          minInt = array[i];
+          sum += array[i];
+        }
+      }
+    } return sum - maxInt - minInt;
+}
+// Решено

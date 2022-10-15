@@ -744,4 +744,4 @@ function sumArray(array) {
       }
     } return sum - maxInt - minInt;
 }
-// Решено
+// НЕ РЕШЕНО. что-то с синтаксисом

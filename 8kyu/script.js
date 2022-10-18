@@ -721,27 +721,13 @@ function smash (words) {
 // Решено
 
 /*
-Sum without highest and lowest number
-Sum all the numbers of a given array ( cq. list ), except the highest and the lowest element ( by value, not by index! ).
-The highest or lowest element respectively is a single element at each edge, even if there are more than one with the same value.
-Mind the input validation.
+Do I get a bonus?
+It's bonus time in the big city! The fatcats are rubbing their paws in anticipation... but who is going to make the most money?
+Build a function that takes in two arguments (salary, bonus). Salary will be an integer, and bonus a boolean.
+If bonus is true, the salary should be multiplied by 10. If bonus is false, the fatcat did not make enough money and must rec
 */
-function sumArray(array) {
-  let maxInt = array[0];
-  let minInt = array[0];
-  let sum = 0;
-    if (array.length === 0 || array === null || array === 0 || array === []) {
-      return 0
-    } else {
-      for (let i = 0; i < array.length; i++) {
-        if (maxInt < array[i]) {
-          maxInt = array[i];
-          sum += array[i];
-        } else if (minInt > array[i]) {
-          minInt = array[i];
-          sum += array[i];
-        }
-      }
-    } return sum - maxInt - minInt;
+function bonusTime(salary, bonus) {
+  let result = bonus ? salary * 10 : salary;
+  return "£" + result;
 }
-// НЕ РЕШЕНО. что-то с синтаксисом
+// Решено

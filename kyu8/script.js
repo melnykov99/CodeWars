@@ -731,3 +731,71 @@ function bonusTime(salary, bonus) {
   return "£" + result;
 }
 // Решено
+
+/*
+Count by X
+Create a function with two arguments that will return an array of the first n multiples of x.
+Assume both the given number and the number of times to count will be positive numbers greater than 0.
+Return the results as an array or list ( depending on language ).
+*/
+function countBy(x, n) {
+  let z = [];
+  let y = 0;
+  for (let i = 0; i < n; i++) {
+    z.push(x + y);
+    y += x
+  }
+  return z
+}
+// Решено
+
+/*
+Count the Monkeys!
+You take your son to the forest to see the monkeys. You know that there are a certain number there (n), but your son is too young to just appreciate the full number, he has to start counting them from 1.
+As a good parent, you will sit and count with him. Given the number (n), populate an array with all numbers up to and including that number, but excluding zero.
+*/
+function monkeyCount(n) {
+  let monkeyArr = []
+  for (let i = 1; i < n + 1; i++) {
+    monkeyArr.push(i)
+  } return monkeyArr
+}
+// Решено
+
+/*
+Total amount of points
+Our football team has finished the championship.
+Our team's match results are recorded in a collection of strings. Each match is represented by a string in the format "x:y", where x is our team's score and y is our opponents score.
+*/
+function points(games) {
+  let count = 0;
+  for (let i = 0; i < games.length; i++) {
+    let amount = games[i].split(':')
+    if (amount[0] > amount[1]) {
+      count += 3
+    } else if (amount[0] === amount[1]) {
+      count += 1
+    } else {
+      count += 0
+    }
+  } return count
+}
+// Решено
+
+/*
+Convert a string to an array
+Write a function to split a string and convert it into an array of words.
+*/
+function stringToArray(string) {
+  return string.split(" ");
+}
+// Решено
+
+/*
+You Can't Code Under Pressure #1
+Code as fast as you can! You need to double the integer and return it.
+*/
+function doubleInteger(i) {
+  return i * 2;
+}
+// Решено

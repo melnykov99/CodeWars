@@ -799,3 +799,56 @@ function doubleInteger(i) {
   return i * 2;
 }
 // Решено
+
+/*
+Grade book
+Complete the function so that it finds the average of the three scores passed to it and returns the letter value associated with that grade.
+*/
+function getGrade(s1, s2, s3) {
+  let average = (s1 + s2 + s3) / 3;
+  if (average <= 100 && average >= 90) {
+    return "A";
+  } else if (average < 90 && average >= 80) {
+    return 'B'
+  } else if (average < 80 && average >= 70) {
+    return 'C'
+  } else if (average < 70 && average >= 60) {
+    return 'D'
+  } else {
+    return 'F'
+  }
+}
+// решено
+
+/*
+Grasshopper - Personalized Message
+Create a function that gives a personalized greeting. This function takes two parameters: name and owner.
+Use conditionals to return the proper message:
+*/
+function greet(name, owner) {
+  return name === owner ? "Hello boss" : "Hello guest";
+}
+//
+
+/*
+Area or Perimeter
+You are given the length and width of a 4-sided polygon. The polygon can either be a rectangle or a square.
+If it is a square, return its area. If it is a rectangle, return its perimeter.
+*/
+const areaOrPerimeter = function (l, w) {
+  return l === w ? l * w : l * 2 + w * 2;
+}
+// Решено
+
+/*
+The Feast of Many Beasts
+All of the animals are having a feast! Each animal is bringing one dish. There is just one rule: the dish must start and end with the same letters as the animal's name. For example, the great blue heron is bringing garlic naan and the chickadee is bringing chocolate cake.
+Write a function feast that takes the animal's name and dish as arguments and returns true or false to indicate whether the beast is allowed to bring the dish to the feast.
+Assume that beast and dish are always lowercase strings, and that each has at least two letters. beast and dish may contain hyphens and spaces, but these will not appear at the beginning or end of the string. They will not contain numerals.
+*/
+function feast(beast, dish) {
+  let arrBeast = beast.split('')
+  let arrDish = dish.split('')
+  return arrBeast[0] === arrDish[0] && arrBeast[length - 1] === arrDish[length - 1] ? true : false
+}
+// решено

@@ -871,3 +871,139 @@ function rentalCarCost(d) {
   return sum;
 }
 // Решено
+
+/*
+L1: Set Alarm
+Write a function named setAlarm which receives two parameters. The first parameter, employed, is true whenever you are employed and the second parameter, vacation is true whenever you are on vacation.
+The function should return true if you are employed and not on vacation (because these are the circumstances under which you need to set an alarm). It should return false otherwise. Examples:
+*/
+function setAlarm(employed, vacation) {
+  if (employed === true && vacation === false) {
+    return true;
+  } else {
+    return false;
+  }
+}
+// Решено
+
+
+/*
+Remove exclamation marks
+Write function RemoveExclamationMarks which removes all exclamation marks from a given string.
+*/
+function removeExclamationMarks(s) {
+  let arr = s.split("");
+  let result = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] !== "!") {
+      result.push(arr[i]);
+    }
+  }
+  return result.join("");
+}
+// Решено. Можно было через replace и регулярные выражения. Можно было function removeExclamationMarks(s) {return s.split('!').join('');}
+
+/*
+Thinkful - Logic Drills: Traffic light
+You're writing code to control your town's traffic lights. You need a function to handle each change from green, to yellow, to red, and then to green again.
+Complete the function that takes a string as an argument representing the current state of the light and returns a string representing the state the light should change to.
+For example, when the input is green, output should be yellow.
+*/
+function updateLight(current) {
+  switch (current) {
+    case "green":
+      return "yellow";
+    case "yellow":
+      return "red";
+    case "red":
+      return "green";
+  }
+}
+// Решено
+
+/*
+Double Char
+Given a string, you have to return a string in which each character (case-sensitive) is repeated once.
+*/
+function doubleChar(str) {
+  let arr = str.split("");
+  let result = [];
+  for (let i = 0; i < arr.length; i++) {
+    result.push(arr[i]);
+    result.push(arr[i]);
+  }
+  return result.join("");
+}
+// Решено
+
+/*
+Beginner Series #4 Cockroach
+The cockroach is one of the fastest insects. Write a function which takes its speed in km per hour and returns it in cm per second, rounded down to the integer (= floored).
+*/
+function cockroachSpeed(s) {
+  return Math.floor(s * 27.777777777778);
+}
+// Решено
+
+/*
+Quarter of the year
+Given a month as an integer from 1 to 12, return to which quarter of the year it belongs as an integer number.
+For example: month 2 (February), is part of the first quarter; month 6 (June), is part of the second quarter; and month 11 (November), is part of the fourth quarter.
+*/
+const quarterOf = (month) => {
+  if (month >= 1 && month <= 3) {
+    return 1;
+  } else if (month >= 4 && month <= 6) {
+    return 2;
+  } else if (month >= 7 && month <= 9) {
+    return 3;
+  } else if (month >= 10 && month <= 12) {
+    return 4;
+  }
+}
+// Решено. Можно через const quarterOf = m => Math.ceil(m/3)
+
+/*
+Will there be enough space?
+Bob is working as a bus driver. However, he has become extremely popular amongst the city's residents. With so many passengers wanting to get aboard his bus, he sometimes has to face the problem of not enough space left on the bus! He wants you to write a simple program telling him if he will be able to fit all the passengers.
+*/
+function enough(cap, on, wait) {
+  return cap - on - wait > 0 ? 0 : (cap - on - wait) * -1;
+}
+// Решено
+
+/*
+Get Planet Name By ID
+The function is not returning the correct values. Can you figure out why?
+*/
+function getPlanetName(id) {
+  var name;
+  switch (id) {
+    case 1:
+      name = "Mercury";
+      break;
+    case 2:
+      name = "Venus";
+      break;
+    case 3:
+      name = "Earth";
+      break;
+    case 4:
+      name = "Mars";
+      break;
+    case 5:
+      name = "Jupiter";
+      break;
+    case 6:
+      name = "Saturn";
+      break;
+    case 7:
+      name = "Uranus";
+      break;
+    case 8:
+      name = "Neptune";
+      break;
+  }
+  return name;
+}
+// Решено

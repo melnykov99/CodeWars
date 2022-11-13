@@ -1017,3 +1017,155 @@ function hoopCount(n) {
   return n >= 10 ? "Great, now move on to tricks" : "Keep at it until you get it"
 }
 // Решено
+
+/*
+Third Angle of a Triangle
+You are given two interior angles (in degrees) of a triangle.
+Write a function to return the 3rd.
+Note: only positive integers will be tested.
+*/
+function otherAngle(a, b) {
+  return 180 - a - b;
+}
+// решено
+
+/*
+Count Odd Numbers below n
+Given a number n, return the number of positive odd numbers below n, EASY!
+*/
+function oddCount(n){
+  return Math.floor(n / 2)
+}
+// Решено
+
+/*
+Grasshopper - Check for factor
+This function should test if the factor is a factor of base.
+Return true if it is a factor or false if it is not.
+*/
+function checkForFactor (base, factor) {
+  return base % factor === 0 ? true : false
+}
+// Решено
+
+/*
+Parse nice int from char problem
+You ask a small girl,"How old are you?" She always says, "x years old", where x is a random number between 0 and 9.
+*/
+function getAge(inputString){
+  return +inputString[0];
+}
+// Решено. Можно было через parseInt
+
+/*
+Find numbers which are divisible by given number
+Complete the function which takes two arguments and returns all numbers which are divisible by the given divisor. First argument is an array of numbers and the second is the divisor.
+*/
+function divisibleBy(numbers, divisor){
+  let result = [];
+  for (let i = 0; i < numbers.length; i++) {
+    if(numbers[i] % divisor === 0) {
+      result.push(numbers[i])
+    }
+  }
+  return result
+}
+// Решено
+
+/*
+Switch it Up!
+When provided with a number between 0-9, return it in words.
+*/
+function switchItUp(number){
+  switch(number) {
+      case 0:
+        return 'Zero';
+        break;
+      case 1:
+        return 'One';
+        break;
+      case 2:
+        return 'Two';
+        break;
+      case 3:
+        return 'Three';
+        break;
+      case 4:
+        return 'Four';
+        break;
+      case 5: 
+        return 'Five';
+        break;
+      case 6:
+        return 'Six';
+        break;
+      case 7:
+        return 'Seven';
+        break;
+      case 8:
+        return 'Eight';
+        break;
+      case 9:
+        return 'Nine';
+        break;
+  
+  }
+}
+// Решено
+
+/*
+All Star Code Challenge #18
+Create a function that accepts 2 string arguments and returns an integer of the count of occurrences the 2nd argument is found in the first one.
+*/
+function strCount(str, letter){  
+let count = 0;
+let pos = str.indexOf(letter);
+while (pos !== -1) {
+  count++;
+  pos = str.indexOf(letter, pos + 1);
+}
+  return count
+}
+// Решено
+
+/*
+altERnaTIng cAsE <=> ALTerNAtiNG CaSe
+*/
+String.prototype.toAlternatingCase = function () {
+  let array = this.split('');
+  let result = [];
+  for(let i = 0; i < array.length; i++) {
+    if(array[i].toLowerCase() === array[i]){
+      result.push(array[i].toUpperCase())
+    } else {
+      result.push(array[i].toLowerCase())
+    }
+  } return result.join('')
+}
+
+/*
+Welcome
+*/
+function greet(language) {
+	const db = {
+    english: 'Welcome',
+    czech: 'Vitejte',
+    danish: 'Velkomst',
+    dutch: 'Welkom',
+    estonian: 'Tere tulemast',
+    finnish: 'Tervetuloa',
+    flemish: 'Welgekomen',
+    french: 'Bienvenue',
+    german: 'Willkommen',
+    irish: 'Failte',
+    italian: 'Benvenuto',
+    latvian: 'Gaidits',
+    lithuanian: 'Laukiamas',
+    polish: 'Witamy',
+    spanish: 'Bienvenido',
+    swedish: 'Valkommen',
+    welsh: 'Croeso'
+  }
+  return db[language] === undefined ? "Welcome" : db[language]
+}
+// Решено
